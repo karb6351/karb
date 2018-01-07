@@ -33,4 +33,7 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::resource('user','UserController');
     Route::post('user/block',"UserController@block")->name('admin.user.block');
     Route::post('user/search',"UserController@search")->name('admin.user.search');
+    Route::resource('role','RoleController');
+    Route::resource('permission','PermissionController');
+
 });
