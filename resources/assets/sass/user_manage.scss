@@ -1,0 +1,22 @@
+.user-manage-tile{
+  background-color: $link;
+  color: white;
+  padding:20px;
+  margin: -0.75rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  box-shadow: 0px 3px 5px 0px rgba(194,192,194,1);
+}
+
+.create-user-header{
+  border-bottom: $grey-light 1px solid;
+  margin: 20px 0px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.recent-act-header{
+  background-color: $grey-light;
+  color: white;
+  padding: 0.75rem;
+}

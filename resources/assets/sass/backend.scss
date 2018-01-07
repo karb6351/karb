@@ -1,0 +1,16 @@
+@import "node_modules/bulma/bulma";
+
+@import "node_modules/buefy/src/scss/buefy";
+
+@import "node_modules/font-awesome/scss/font-awesome";
+
+//backend css
+@import "variables";
+
+@import "override";
+
+@import "helper";
+
+@import "admin_sidebar";
+
+@import "user_manage";

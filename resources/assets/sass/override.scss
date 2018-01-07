@@ -1,0 +1,54 @@
+body{
+    background-color: whitesmoke;
+    height: 100vh;
+    overflow-y:auto;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index:1000;
+    &-item:hover{
+        background-color: #FFF;
+    }
+}
+
+.column{
+    background-color: white;
+    max-height: 100%;
+}
+
+.single-post-list{
+    margin: 0px;
+    padding: 10px 0;
+    &:hover{
+        select{
+            background-color: #f2f2f240;
+        }
+        background-color: #f2f2f240;
+    }
+    & + &{
+        border-top: 1px solid rgba(219, 219, 219, 0.5);
+        margin-top: 0rem;
+        padding: 1rem 0;
+    }
+}
+
+ .dropdown{
+    &.is-active{
+        background-color:  rgba(219, 219, 219, 0.5);
+    }
+}
+.footer{
+    z-index:1000;
+    border-top: 2px solid $cyan;
+    background-color: $white;
+    margin-top: 15px;
+    box-shadow: 3px rgba(10, 10, 10, 0.1);
+    padding:30px;
+}
+
+.verify-message{
+    padding:0px;
+    margin: 0px;
+}
