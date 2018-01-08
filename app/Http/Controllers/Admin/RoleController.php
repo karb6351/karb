@@ -21,6 +21,29 @@ class RoleController extends Controller
         return view('partial.admin.role_manage.index')->withRoles($roles)->withUsers($users);
     }
 
+    public function show($id){
+        $role = Role::findOrFail($id);
+        return view('partial.admin.role_manage.show')->withRole($role);
+    }
+
+    public function create(){
+        $roles = Role::all();
+        return view('partial.admin.role_manage.create')->withRoles($roles);
+    }
+
+    public function store($request, $id){
+
+    }
+
+    public function edit($id){
+        $roles = Role::findOrFail($id);
+        return view('partial.admin.role_manage.edit')->withRole($role);
+    }
+
+    public function update($request, $id){
+
+    }
+
     public function assignRole(Request $request){
         $this->validate($request,[
             'role' => 'required',

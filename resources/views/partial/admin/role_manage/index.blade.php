@@ -80,8 +80,8 @@
                         @foreach($roles as $role)
                             <tr>
                                 <td>{{ $role->name }}</td>
-                                <td><button class="button is-link"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button></td>
-                                <td><button class="button is-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+                                <td><a href="{{ route('role.show',$role->id) }}" class="button is-link"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></td>
+                                <td><a href="{{ route('role.edit',$role->id) }}" class="button is-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                             </tr>
                         @endforeach
                         </tbody>
