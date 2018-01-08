@@ -18143,7 +18143,16 @@ body {
 }
 
 .manage-left-panel {
+  position: fixed;
+  left: -2000px;
   margin: 0 20px;
+}
+
+@media screen and (min-width: 1216px) {
+  .manage-left-panel {
+    position: -webkit-sticky;
+    position: sticky;
+  }
 }
 
 .manage-left-panel .sidemenu {
@@ -18156,6 +18165,12 @@ body {
 
 .user-info-table {
   margin: 0 auto;
+}
+
+.user-info-table,
+.user-info-table tablet,
+.user-info-table mobile {
+  overflow-x: scroll;
 }
 
 .user-manage-tile {

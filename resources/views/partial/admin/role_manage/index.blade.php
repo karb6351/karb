@@ -1,7 +1,7 @@
 @extends('layouts.manage')
 
 @section('content')
-    <div class="columns">
+    <div class="columns is-desktop">
         <div class="column is-7">
             <div class="assign-role" id="assign-role">
                 <div class="assign-role-header">
@@ -35,7 +35,6 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Gender</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -44,7 +43,6 @@
                                             <td>@{{ user.id }}</td>
                                             <td>@{{ user.username }}</td>
                                             <td>@{{ user.email }}</td>
-                                            <td>@{{ user.gender }}</td>
                                             <td><b-checkbox name="users[]" v-model="assignRole"
                                                             :native-value="user.id" required>
                                                 </b-checkbox></td>

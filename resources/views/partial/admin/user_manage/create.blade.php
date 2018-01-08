@@ -17,26 +17,11 @@
                 {{ csrf_field() }}
                 <div class="column is-6">
                     <div class="columns">
-
                         <div class="column is-12">
                             <b-field label="Username">
                                 <b-input type="text" name="username" required></b-input>
                             </b-field>
                         </div>
-
-                        {{--<div class="column is-4" v-cloak>--}}
-                            {{--<b-field label="Role">--}}
-                                {{--<b-select name="role" placeholder="Select a Role" required>--}}
-                                    {{--<option--}}
-                                            {{--v-for="role in roles"--}}
-                                            {{--:value="role.id"--}}
-                                            {{--:key="role.id">--}}
-                                        {{--@{{ role.name }}--}}
-                                    {{--</option>--}}
-                                {{--</b-select>--}}
-                            {{--</b-field>--}}
-                        {{--</div>--}}
-
                     </div>
                     <div class="columns">
                         <div class="column is-12">

@@ -1,4 +1,11 @@
 .manage-left-panel{
+    position: fixed;
+    left:-2000px;
+
+    @include widescreen {
+        position: sticky;
+    }
+
     margin:0 20px;
     .sidemenu{
         position: sticky;
@@ -10,4 +17,7 @@
 
 .user-info-table{
     margin: 0 auto;
+    @include desktop,tablet, mobile {
+        overflow-x: scroll;
+    }
 }
