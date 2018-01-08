@@ -11,10 +11,10 @@
         </p>
         <ul class="menu-list">
             <li><a href={{route('user.index')}} class="{{ Request::is('admin/user*')? " is-active" : ''}}">Manger User</a></li>
-            <li><a >Role & permission</a>
-                <ul>
-                    <li><a href="{{ route('role.index') }}">Role</a></li>
-                    <li><a href="{{ route('permission.index') }}">Permission</a></li>
+            <li><a class="has-submenu {{ (Request::is('admin/role*') || Request::is('admin/permission*'))? " is-active" : ''}}" >Role & permission</a>
+                <ul class="submenu {{ (Request::is('admin/role*') || Request::is('admin/permission*'))? " is-open" : 'is-close'}}">
+                    <li><a href="{{ route('role.index') }}" class="{{ Request::is('admin/role*')? " is-active" : ''}}">Role</a></li>
+                    <li><a href="{{ route('permission.index') }}" class="{{ Request::is('admin/permission*')? " is-active" : ''}}">Permission</a></li>
                 </ul>
             </li>
         </ul>

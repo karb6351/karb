@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 36);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -40362,29 +40362,24 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).setImmediate, __webpack_require__(3).clearImmediate))
 
 /***/ }),
-/* 36 */
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(37);
-__webpack_require__(38);
-module.exports = __webpack_require__(39);
+module.exports = __webpack_require__(41);
 
 
 /***/ }),
-/* 37 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_buefy__);
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 __webpack_require__(10);
 
 window.Vue = __webpack_require__(33);
@@ -40393,26 +40388,27 @@ window.Vue = __webpack_require__(33);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
-// Vue.component('create-user', require('./components/backend/user/createUser.vue'));
+__webpack_require__(42);
 
 /***/ }),
-/* 38 */
+/* 42 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
 
-/***/ }),
-/* 39 */
-/***/ (function(module, exports) {
+var accordions = $('.has-submenu');
 
-// removed by extract-text-webpack-plugin
+for (var i = 0; i < accordions.length; i++) {
+    accordions[i].onclick = function () {
+        var submenu = this.nextElementSibling;
+        if (submenu.classList.contains('is-open')) {
+            submenu.classList.remove('is-open');
+            submenu.classList.add('is-close');
+        } else {
+            submenu.classList.remove('is-close');
+            submenu.classList.add('is-open');
+        }
+    };
+}
 
 /***/ })
 /******/ ]);

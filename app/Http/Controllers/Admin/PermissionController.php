@@ -11,4 +11,10 @@ class PermissionController extends Controller
     {
         $this->middleware('role:superadmin');
     }
+
+    public function index(){
+        return view('partial.admin.permission_manage.index');
+    }
 }
+
+

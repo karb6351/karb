@@ -17488,6 +17488,38 @@ body {
   padding: 5px;
 }
 
+.m-6 {
+  margin: 6px;
+}
+
+.p-6 {
+  padding: 6px;
+}
+
+.m-7 {
+  margin: 7px;
+}
+
+.p-7 {
+  padding: 7px;
+}
+
+.m-8 {
+  margin: 8px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.m-9 {
+  margin: 9px;
+}
+
+.p-9 {
+  padding: 9px;
+}
+
 .m-10 {
   margin: 10px;
 }
@@ -17611,6 +17643,134 @@ body {
 
 .p-right-5 {
   padding-right: 5px;
+}
+
+.m-top-6 {
+  margin-top: 6px;
+}
+
+.p-top-6 {
+  padding-top: 6px;
+}
+
+.m-bottom-6 {
+  margin-bottom: 6px;
+}
+
+.p-bottom-6 {
+  padding-bottom: 6px;
+}
+
+.m-left-6 {
+  margin-left: 6px;
+}
+
+.p-left-6 {
+  padding-left: 6px;
+}
+
+.m-right-6 {
+  margin-right: 6px;
+}
+
+.p-right-6 {
+  padding-right: 6px;
+}
+
+.m-top-7 {
+  margin-top: 7px;
+}
+
+.p-top-7 {
+  padding-top: 7px;
+}
+
+.m-bottom-7 {
+  margin-bottom: 7px;
+}
+
+.p-bottom-7 {
+  padding-bottom: 7px;
+}
+
+.m-left-7 {
+  margin-left: 7px;
+}
+
+.p-left-7 {
+  padding-left: 7px;
+}
+
+.m-right-7 {
+  margin-right: 7px;
+}
+
+.p-right-7 {
+  padding-right: 7px;
+}
+
+.m-top-8 {
+  margin-top: 8px;
+}
+
+.p-top-8 {
+  padding-top: 8px;
+}
+
+.m-bottom-8 {
+  margin-bottom: 8px;
+}
+
+.p-bottom-8 {
+  padding-bottom: 8px;
+}
+
+.m-left-8 {
+  margin-left: 8px;
+}
+
+.p-left-8 {
+  padding-left: 8px;
+}
+
+.m-right-8 {
+  margin-right: 8px;
+}
+
+.p-right-8 {
+  padding-right: 8px;
+}
+
+.m-top-9 {
+  margin-top: 9px;
+}
+
+.p-top-9 {
+  padding-top: 9px;
+}
+
+.m-bottom-9 {
+  margin-bottom: 9px;
+}
+
+.p-bottom-9 {
+  padding-bottom: 9px;
+}
+
+.m-left-9 {
+  margin-left: 9px;
+}
+
+.p-left-9 {
+  padding-left: 9px;
+}
+
+.m-right-9 {
+  margin-right: 9px;
+}
+
+.p-right-9 {
+  padding-right: 9px;
 }
 
 .m-top-10 {
@@ -18020,5 +18180,31 @@ body {
   background-color: #b5b5b5;
   color: white;
   padding: 0.75rem;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.is-close {
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.is-open {
+  max-height: 72px;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.assign-role-header {
+  border-bottom: #b5b5b5 1px solid;
+  margin: 0px;
+  padding: 10px 20px;
+  font-weight: bold;
 }
 

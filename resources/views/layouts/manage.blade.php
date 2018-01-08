@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/backend.js') }}"></script>
     @include('inc.nav.js.nav_js')
 
     @yield('js')
