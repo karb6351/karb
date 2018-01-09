@@ -1,5 +1,7 @@
 @extends('layouts.manage')
 
 @section('content')
-    permission
+    <div class="permission-manage-tile">
+        Permission Management
+    </div>
 @endsection
