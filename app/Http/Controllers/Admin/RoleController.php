@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\User;
 use Session;
@@ -36,8 +37,9 @@ class RoleController extends Controller
     }
 
     public function edit($id){
-        $roles = Role::findOrFail($id);
-        return view('partial.admin.role_manage.edit')->withRole($role);
+        $role = Role::findOrFail($id);
+        $permissions = Permission::all();
+        return view('partial.admin.role_manage.edit')->withRole($role)->withPermissions($permissions);
     }
 
     public function update($request, $id){

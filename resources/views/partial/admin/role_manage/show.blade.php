@@ -10,7 +10,7 @@
                         <div class="buttons has-addons">
                             <a href="{{ route('role.index') }}" class="button is-primary">
                                 <i class="fa fa-arrow-circle-left m-right-5" aria-hidden="true"></i>Back to index</a>
-                            <a href="{{ route('role.update',$role->id) }}" class="button">
+                            <a href="{{ route('role.edit',$role->id) }}" class="button">
                                 <i class="fa fa-pencil-square-o m-right-5" aria-hidden="true"></i>Edit Role</a>
                         </div>
                     </div>
@@ -37,11 +37,22 @@
 
                                     <b-tab-item label="User">
                                         <div class="column is-12 role-user">
-                                            @foreach($role->users as $user)
-                                                <ol>
-                                                    <li>{{ $user->username }}</li>
-                                                </ol>
-                                            @endforeach
+                                            <table class="table is-fullwidth">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($role->users as $user)
+                                                    <tr>
+                                                        <td>{{ $user->id }}</td>
+                                                        <td>{{ $user->username }}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </b-tab-item>
                                 </b-tabs>

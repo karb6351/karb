@@ -1,8 +1,13 @@
 @extends('layouts.manage')
 
 @section('content')
+    <div class="Role-manage-tile">
+        Role Management
+    </div>
     <div class="columns is-desktop">
+
         <div class="column is-7">
+
             <div class="assign-role" id="assign-role">
                 <div class="assign-role-header">
                     Assign Role
@@ -24,7 +29,7 @@
                                 </b-field>
                             </div>
                             <div class="column is-4 m-top-30">
-                                <button type="submit" class="button is-primary">Submit</button>
+                                <button type="submit" class="button is-primary">Assign</button>
                             </div>
                         </div>
                         <div class="columns asign-user-table">

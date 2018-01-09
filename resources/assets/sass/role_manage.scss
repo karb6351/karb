@@ -1,0 +1,35 @@
+.role-manage-tile{
+  background-color: $link;
+  color: white;
+  padding:20px;
+  margin: -0.75rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  box-shadow: 0px 3px 5px 0px rgba(194,192,194,1);
+}
+
+.assign-role-header{
+  border-bottom: $grey-light 1px solid;
+  margin: 0px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+.show-role-header{
+  border-bottom: $grey-light 1px solid;
+  margin: 0px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.role-tool{
+  float:right;
+  margin-top: -5px;
+}
+
+.b-checkbox.checkbox + .checkbox{
+  margin:0px;
+}
+.permission-choice{
+  overflow:scroll;
+  max-height: 350px;
+}
