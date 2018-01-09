@@ -37,3 +37,10 @@
   margin-top:0.75em;
   margin-bottom:0.75em;
 }
+
+
+.permission-choice{
+  $checkbox-active-background-color: $primary !default;
+  $checkbox-checkmark-color: $primary-invert !default;
+}
+

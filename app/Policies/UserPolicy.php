@@ -39,7 +39,7 @@ class UserPolicy
         if ($user->hasRole('superadmin') && !$target->hasRole('superadmin')){
             return true;
         }
-        //admin only can delete user
+        //admin only can block user
         else if($user->hasRole('admin') && $target->hasRole('user')){
             return true;
         }

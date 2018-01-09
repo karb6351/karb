@@ -1,6 +1,9 @@
 @extends('layouts.manage')
 
 @section('content')
+    <div class="role-manage-tile">
+        Role Management
+    </div>
     <div class="columns">
         <div class="column is-7">
             <div class="show-role-info">
@@ -68,6 +71,7 @@
 @endsection
 
 @section('js')
+    @include('inc.messages.message')
     <script>
         new Vue({
             el: '.show-role-info',

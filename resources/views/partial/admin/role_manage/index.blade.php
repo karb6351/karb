@@ -1,7 +1,7 @@
 @extends('layouts.manage')
 
 @section('content')
-    <div class="Role-manage-tile">
+    <div class="role-manage-tile">
         Role Management
     </div>
     <div class="columns is-desktop">
