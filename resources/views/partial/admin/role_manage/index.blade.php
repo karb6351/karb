@@ -18,8 +18,8 @@
                         <div class="columns">
                             <div class="column is-4">
                                 <b-field label="Role">
-                                    <b-select name="role" placeholder="Select a role" required v-cloak>
-                                        <option  v-for="role in roles" :value="role.id" :key="role.id">@{{ role.name }}</option>
+                                    <b-select name="role" placeholder="Select a role" v-cloak>
+                                        <option  v-for="role in roles" :value="role.id" :key="role.id" >@{{ role.name }}</option>
                                     </b-select>
                                 </b-field>
                             </div>
@@ -54,6 +54,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div class="columns">
+                                    <div class="column is-1"><button class="button is-link" @click.prevent="paginate('previous')" :disabled="isStart">Previous</button></div>
+                                    <div class="column is-offset-9 is-1"><button class="button is-link" @click.prevent="paginate('next')" :disabled="isEnd">Next</button></div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -107,13 +111,42 @@
                 users:{!! json_encode($users) !!},
                 search: '',
                 assignRole: [],
+
+                start:0,
+                limit:10,
+                pagination:10,
             },
             computed:{
                 filterUsers : function(){
                     return this.users.filter( (user) => {
-                        return (user.username.toLowerCase().match(this.search) ||
-                        user.email.toLowerCase().match(this.search))
-                    });
+                        return (user.username.toLowerCase().match(this.search.toLowerCase()) ||
+                        user.email.toLowerCase().match(this.search.toLowerCase()))
+                    }).slice(this.start,this.limit);
+                },
+                userLength : function(){
+                    return this.filterUsers.length;
+                },
+                isStart: function(){
+                    return this.start - this.pagination < 0;
+                },
+                isEnd: function () {
+                    return this.start + this.pagination > this.userLength;
+                }
+            },
+            methods:{
+                paginate: function(choice){
+                    if (choice == 'previous'){
+                        if (!this.isStart){
+                            this.start -= this.pagination;
+                            this.limit -= this.pagination;
+
+                        }
+                    }else if (choice == 'next'){
+                        if (!this.isEnd){
+                            this.start += this.pagination;
+                            this.limit += this.pagination;
+                        }
+                    }
                 }
             }
         })

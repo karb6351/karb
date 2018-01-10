@@ -28,13 +28,18 @@ Route::prefix('verify')->namespace('Auth')->group(function(){
 
 //backend, for admin
 Route::prefix('admin')->namespace('Admin')->group(function(){
+    //dashboard
     Route::get('/','adminController@index')->name('admin.index');
     Route::get('/dashboard' , 'adminController@dashboard')->name('admin.dashboard');
-    Route::resource('user','UserController');
+    //user
+    Route::resource('user','UserController', ['except' => 'destroy']);
     Route::post('user/block',"UserController@block")->name('admin.user.block');
     Route::post('user/search',"UserController@search")->name('admin.user.search');
-    Route::resource('role','RoleController');
+    //role
+    Route::resource('role','RoleController', ['except' => 'destroy']);
     Route::post('role/assign','RoleController@assignRole')->name('admin.role.assign');
-    Route::resource('permission','PermissionController');
+    //permission
+    Route::resource('permission','PermissionController' , ['only' => ['index','store']]);
+    Route::put('permission/update','PermissionController@update')->name('permission.update');
 
 });
