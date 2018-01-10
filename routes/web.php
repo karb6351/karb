@@ -12,10 +12,11 @@
 */
 
 
-Route::namespace('Basic')->group(function(){
-    Route::get('/','PageController@index')->name('home');
-    Route::get('category/{id}','CategoryController@show')->name('category.show');
-});
+Route::get('/','PageController@index')->name('home');
+Route::get('category/{id}','CategoryController@show')->name('category.show');
+//post manage
+Route::resource('post','PostController', ['except' => ['index','destroy']]);
+
 
 
 //register, login/out, reset password
@@ -27,19 +28,21 @@ Route::prefix('verify')->namespace('Auth')->group(function(){
 });
 
 //backend, for admin
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->group(function(){
     //dashboard
-    Route::get('/','adminController@index')->name('admin.index');
-    Route::get('/dashboard' , 'adminController@dashboard')->name('admin.dashboard');
+    Route::get('/','Admin\adminController@index')->name('admin.index');
+    Route::get('/dashboard' , 'Admin\adminController@dashboard')->name('admin.dashboard');
     //user
-    Route::resource('user','UserController', ['except' => 'destroy']);
-    Route::post('user/block',"UserController@block")->name('admin.user.block');
-    Route::post('user/search',"UserController@search")->name('admin.user.search');
+    Route::resource('user','Admin\UserController', ['except' => 'destroy']);
+    Route::post('user/block',"Admin\UserController@block")->name('admin.user.block');
+    Route::post('user/search',"Admin\UserController@search")->name('admin.user.search');
     //role
-    Route::resource('role','RoleController', ['except' => 'destroy']);
-    Route::post('role/assign','RoleController@assignRole')->name('admin.role.assign');
+    Route::resource('role','Admin\RoleController', ['except' => 'destroy']);
+    Route::post('role/assign','Admin\RoleController@assignRole')->name('admin.role.assign');
     //permission
-    Route::resource('permission','PermissionController' , ['only' => ['index','store']]);
-    Route::put('permission/update','PermissionController@update')->name('permission.update');
-
+    Route::resource('permission','Admin\PermissionController' , ['only' => ['index','store']]);
+    Route::put('permission/update','Admin\PermissionController@update')->name('permission.update');
+    //post manage
+    Route::get('post','PostController@index')->name('admin.post.index');
+    Route::delete('post/{id}','PostController@destroy')->name('admin.post.destroy');
 });
