@@ -40393,6 +40393,8 @@ window.Vue = __webpack_require__(33);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
+// Vue.component('createPost', require('./components/frontend/createPost.vue'));
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -40400,7 +40402,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
  */
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
-// Vue.component('create-user', require('./components/backend/user/createUser.vue'));
 
 /***/ }),
 /* 38 */

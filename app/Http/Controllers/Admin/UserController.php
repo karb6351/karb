@@ -61,9 +61,6 @@ class UserController extends Controller
         $active->user_id = $user->id;
         $active->save();
 
-        $role = Role::find($request->role);
-        $user->assignRole($role->name);
-
         Session::flash('success','User is created');
         return redirect()->route('user.index');
     }

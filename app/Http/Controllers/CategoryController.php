@@ -13,7 +13,9 @@ class CategoryController extends Controller
     
     public function show($id){
         $category = Category::find($id);
-        return view('partial.user.category_show')->withCategory($category);
+        $categories= Category::all();
+        $posts = $category->posts()->paginate(10);
+        return view('partial.user.category_show')->withCategory($category)->withCategories($categories)->withPosts($posts);
     }
 
 }

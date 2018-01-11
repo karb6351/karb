@@ -17403,7 +17403,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .navbar-item:hover {
@@ -17451,6 +17451,29 @@ body {
 .verify-message {
   padding: 0px;
   margin: 0px;
+}
+
+.modal {
+  display: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.modal .modal-card-head {
+  background-color: #167df0;
+}
+
+.modal .modal-card-head .modal-card-title {
+  color: white;
+}
+
+.modal.is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /*

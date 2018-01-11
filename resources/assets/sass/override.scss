@@ -7,7 +7,7 @@ body{
 .navbar{
     position: sticky;
     top: 0;
-    z-index:1000;
+    z-index:10;
     &-item:hover{
         background-color: #FFF;
     }
@@ -51,4 +51,20 @@ body{
 .verify-message{
     padding:0px;
     margin: 0px;
+}
+
+.modal{
+    display: none;
+    transition: all 0.2s ease-in-out;
+    z-index: 1000;
+    .modal-card-head{
+        background-color: $info;
+        .modal-card-title{
+            color:$white;
+        }
+    }
+    &.is-active{
+        display:flex;
+        transition: all 0.2s ease-in-out;
+    }
 }

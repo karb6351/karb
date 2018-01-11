@@ -13,6 +13,7 @@ import Buefy from 'buefy'
 
 Vue.use(Buefy)
 
+// Vue.component('createPost', require('./components/frontend/createPost.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -21,4 +22,3 @@ Vue.use(Buefy)
  */
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
-// Vue.component('create-user', require('./components/backend/user/createUser.vue'));
