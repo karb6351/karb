@@ -6,6 +6,7 @@
         <ul class="menu-list">
             <li><a href={{route('admin.dashboard')}} class="{{ Request::is('admin/dashboard')? " is-active" : ''}}">Dashboard</a></li>
             <li><a href={{route('admin.post.index')}} class="{{ Request::is('admin/post')? " is-active" : ''}}">Post</a></li>
+            <li><a href={{route('admin.category.index')}} class="{{ Request::is('admin/category')? " is-active" : ''}}">Category</a></li>
         </ul>
         <p class="menu-label">
             ADMINISTRATION

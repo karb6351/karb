@@ -1,0 +1,193 @@
+.post-topic{
+  border-bottom: 1px solid $grey-light;
+  padding: 5px 0;
+}
+
+.post-header-column{
+  //@include mobile{
+  //  position: sticky;
+  //  top:52px;
+  //  z-index: 2;
+  //  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  //}
+
+
+  position: fixed;
+  top:-100px;
+  z-index: 21;
+  left:0px;
+  padding: 8px 10px;
+  display: block;
+  opacity: 0;
+  transition: all 0.2s ease;
+  background-color: $white;
+
+
+  .post-header{
+    font-weight: bold;
+  }
+}
+
+.is-scroll{
+  transition: all 0.2s ease;
+  top:0px;
+  opacity: 1;
+}
+
+.post-paginate{
+  background-color: $white;
+
+}
+
+.is-male{
+  color: #2177ea;
+}
+
+.is-female{
+  color: #ef1e1ee0;
+}
+
+.post-owner{
+  font-weight: bold;
+}
+
+.content-body{
+  margin: 20px 0;
+}
+
+.likeAndDislike{
+  border:1px solid $grey;
+  border-radius: 5px;
+  display: inline-block;
+  padding:3px 12px;
+}
+
+.is-agree{
+  color: $success;
+}
+
+.is-disagree{
+  color: $danger;
+}
+
+.reply-body{
+  margin-bottom:5px;
+  .reply-icon{
+    cursor: pointer;
+    margin-left: 5px;
+    color: $grey;
+  }
+}
+
+.level:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.left-toolbar{
+  @include desktop{
+    position: fixed;
+    top:150px;
+    left:150px;
+    display: block;
+    background-color: $white;
+    border-radius: 5px;
+    border: 1px solid $white;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  }
+  //@include mobile{
+  //  position: fixed;
+  //  top:52px;
+  //  z-index: 2;
+  //  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  //  display: inline-block;
+  //  list-style-type: none;
+  //  background-color: $white;
+  //  li{
+  //    display: inline;
+  //  }
+  //}
+  display: none;
+  z-index: 5;
+}
+
+.right-toolbar{
+  @include desktop {
+    position: fixed;
+    top: 150px;
+    right: 150px;
+    display: block;
+    background-color: $white;
+    border-radius: 5px;
+    border: 1px solid $white;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  }
+  //@include mobile{
+  //  position: fixed;
+  //  top:52px;
+  //  right:0;
+  //  z-index: 2;
+  //  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  //  display: inline-block;
+  //  list-style-type: none;
+  //  background-color: $white;
+  //  li{
+  //    display: inline;
+  //  }
+  //}
+  display: none;
+  z-index: 5;
+}
+
+.tools-mobile-bar{
+  //@include touch{
+  //  background-color: $white;
+  //  position: sticky;
+  //  top:52px;
+  //  z-index: 2;
+  //  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  //  display:block;
+  //  list-style-type: none;
+  //  padding: 0;
+  //  ul{
+  //    margin:auto;
+  //    li{
+  //      display:inline;
+  //    }
+  //  }
+  @include touch{
+    width:100%;
+    max-width: 100%;
+    background-color: $white;
+    position: fixed;
+    bottom:-100px;
+    z-index: 10;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    display:block;
+    list-style-type: none;
+    padding: 0;
+    ul{
+      margin:auto;
+      li{
+        display:inline;
+      }
+    }
+  }
+  display:none;
+  transition: all .2s ease;
+  .tool-list{
+    width: 80%;
+    margin:0 auto;
+  }
+}
+
+.is-bottom-scroll{
+  bottom:0px;
+  transition: all .2s ease;
+}
+
+.share-fb,.share-wtsapp,.share-twitter,.reply-post,.bookmark-post,.category-page{
+  &:hover{
+    color: $grey;
+  }
+}
+

@@ -17393,10 +17393,15 @@ label.panel-block:hover {
   cursor: pointer;
 }
 
+.tag:not(body).is-orange {
+  background-color: #ffbc6b;
+  color: white;
+}
+
 body {
   background-color: whitesmoke;
-  height: 100vh;
-  overflow-y: auto;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .navbar {
@@ -18292,6 +18297,17 @@ body {
 #permissionTable {
   overflow: scroll;
   max-height: 350px;
+}
+
+.post-manage-tile {
+  background-color: #3273dc;
+  color: white;
+  padding: 20px;
+  margin: -0.75rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 3px 5px 0px #c2c0c2;
+          box-shadow: 0px 3px 5px 0px #c2c0c2;
 }
 
 .post-manage-tile {

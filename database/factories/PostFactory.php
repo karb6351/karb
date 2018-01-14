@@ -1,7 +1,6 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +13,14 @@ use App\User;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
-    static $password;
+$factory->define(App\Post::class, function (Faker $faker) {
 
-    $gender = $faker->randomElement(['male', 'female']);
     return [
-        'username' => $faker->unique()->userName,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'gender' => $gender,
-        'remember_token' => str_random(10),
+        'topic' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'content' => $faker->text($maxNbChars = 200),
+        'category_id' => $faker->randomDigit % 4 + 1,
+        'user_id' => $faker->randomNumber($nbDigits = 2) % 20 + 20,
+
+
     ];
 });

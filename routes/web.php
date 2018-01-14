@@ -42,6 +42,8 @@ Route::prefix('admin')->group(function(){
     //permission
     Route::resource('permission','Admin\PermissionController' , ['only' => ['index','store']]);
     Route::put('permission/update','Admin\PermissionController@update')->name('permission.update');
+    //category
+    Route::get('category','CategoryController@index')->name('admin.category.index');
     //post manage
     Route::get('post','PostController@index')->name('admin.post.index');
     Route::delete('post/{id}','PostController@destroy')->name('admin.post.destroy');

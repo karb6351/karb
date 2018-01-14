@@ -24,3 +24,5 @@ use App\User;
 //                    ->orWhere('email' ,'like', "%".$user."%")->get();
 //    return response()->json(['users' => $users],200);
 //});
+
+Route::get('/category/{id}','CategoryApiController@show');

@@ -11,7 +11,7 @@
             <a href="{{ route('user.create') }}" class="button is-link"><i class="fa fa-user-plus m-right-5" aria-hidden="true"></i>Create User</a>
         </div>
         <div class="column is-offset-6 is-4">
-            <form action="{{ route('admin.user.search') }}" method="POST">
+            <form action="{{ route('admin.user.search') }}" method="post">
                 {{ csrf_field() }}
                 <div class="field has-addons">
                     <div class="control">

@@ -9,23 +9,23 @@
         </div>
         <div class="navbar-menu navbar-end">
             {{-- search post --}}
-            <div class="navbar-item">
-                    <div v-cloak class="search">
-                        <div v-show="isSearch" class="search-post">
-                            <form class="" action="" method="post">
-                                <input class="search-input" type="text" placeholder="Search Post">
-                                <button class="search-icon" type="submit">
-                                    <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div v-cloak v-show="!isSearch" class="search-post-button" @click="isSearch = !isSearch">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </div>
-                    <div v-cloak v-show="isSearch" class="delete is-medium m-left-5" @click="isSearch = !isSearch"></div>
+            {{--<div class="navbar-item">--}}
+                    {{--<div v-cloak class="search">--}}
+                        {{--<div v-show="isSearch" class="search-post">--}}
+                            {{--<form class="" action="" method="post">--}}
+                                {{--<input class="search-input" type="text" placeholder="Search Post">--}}
+                                {{--<button class="search-icon" type="submit">--}}
+                                    {{--<i class="fa fa-search fa-lg" aria-hidden="true"></i>--}}
+                                {{--</button>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div v-cloak v-show="!isSearch" class="search-post-button" @click="isSearch = !isSearch">--}}
+                        {{--<i class="fa fa-search" aria-hidden="true"></i>--}}
+                    {{--</div>--}}
+                    {{--<div v-cloak v-show="isSearch" class="delete is-medium m-left-5" @click="isSearch = !isSearch"></div>--}}
 
-            </div>
+            {{--</div>--}}
             @if (!Auth::check())
                 <a href="{{ route('login') }}" class="navbar-item is-tab{{ Request::is('login')? ' is-active':'' }}">Login</a>
                 <a href="{{ route('register') }}" class="navbar-item is-tab {{ Request::is('register')? ' is-active':'' }}">Register</a>

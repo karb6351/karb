@@ -172,3 +172,10 @@
     cursor: pointer;
 
 }
+
+.tag:not(body).is-orange{
+    background-color: #ffbc6b;
+    color:$white;
+}
+
+

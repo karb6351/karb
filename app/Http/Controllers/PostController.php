@@ -23,7 +23,8 @@ class PostController extends Controller
         $today = Carbon::today()->toDateString();
         $now = Carbon::now()->toDateString();
         $dayCount = Post::whereBetween(DB::raw('date(created_at)'),[$today,$now])->get()->count();
-        return view('partial.admin.post.index')->withPosts($posts)->withPostDaily($dayCount);
+        $totalCount = Post::all()->count();
+        return view('partial.admin.post.index')->withPosts($posts)->withPostDaily($dayCount)->withTotalCount($totalCount);
     }
 
     public function store(Request $request){

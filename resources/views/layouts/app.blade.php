@@ -18,4 +18,6 @@
     @yield('js')
 </body>
 
+
+
 </html>

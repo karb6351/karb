@@ -9,10 +9,16 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import Buefy from 'buefy'
+import Buefy from 'buefy';
 
-Vue.use(Buefy)
+//
+// import InfiniteLoading from 'vue-infinite-loading';
+//
+// Vue.use(InfiniteLoading);
 
+Vue.use(Buefy);
+
+Vue.component('postList', require('./components/frontend/postList.vue'));
 // Vue.component('createPost', require('./components/frontend/createPost.vue'));
 
 /**

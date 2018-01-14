@@ -17393,10 +17393,15 @@ label.panel-block:hover {
   cursor: pointer;
 }
 
+.tag:not(body).is-orange {
+  background-color: #ffbc6b;
+  color: white;
+}
+
 body {
   background-color: whitesmoke;
-  height: 100vh;
-  overflow-y: auto;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .navbar {
@@ -18162,6 +18167,172 @@ body {
 }
 
 .is-muted:hover {
+  color: #7a7a7a;
+}
+
+.post-topic {
+  border-bottom: 1px solid #b5b5b5;
+  padding: 5px 0;
+}
+
+.post-header-column {
+  position: fixed;
+  top: -100px;
+  z-index: 21;
+  left: 0px;
+  padding: 8px 10px;
+  display: block;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.post-header-column .post-header {
+  font-weight: bold;
+}
+
+.is-scroll {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  top: 0px;
+  opacity: 1;
+}
+
+.post-paginate {
+  background-color: white;
+}
+
+.is-male {
+  color: #2177ea;
+}
+
+.is-female {
+  color: #ef1e1ee0;
+}
+
+.post-owner {
+  font-weight: bold;
+}
+
+.content-body {
+  margin: 20px 0;
+}
+
+.likeAndDislike {
+  border: 1px solid #7a7a7a;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 3px 12px;
+}
+
+.is-agree {
+  color: #23d160;
+}
+
+.is-disagree {
+  color: #ff3860;
+}
+
+.reply-body {
+  margin-bottom: 5px;
+}
+
+.reply-body .reply-icon {
+  cursor: pointer;
+  margin-left: 5px;
+  color: #7a7a7a;
+}
+
+.level:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.left-toolbar {
+  display: none;
+  z-index: 5;
+}
+
+@media screen and (min-width: 1024px) {
+  .left-toolbar {
+    position: fixed;
+    top: 150px;
+    left: 150px;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  }
+}
+
+.right-toolbar {
+  display: none;
+  z-index: 5;
+}
+
+@media screen and (min-width: 1024px) {
+  .right-toolbar {
+    position: fixed;
+    top: 150px;
+    right: 150px;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  }
+}
+
+.tools-mobile-bar {
+  display: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+@media screen and (max-width: 1023px) {
+  .tools-mobile-bar {
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: -100px;
+    z-index: 10;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+            box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    display: block;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .tools-mobile-bar ul {
+    margin: auto;
+  }
+
+  .tools-mobile-bar ul li {
+    display: inline;
+  }
+}
+
+.tools-mobile-bar .tool-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.is-bottom-scroll {
+  bottom: 0px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.share-fb:hover,
+.share-wtsapp:hover,
+.share-twitter:hover,
+.reply-post:hover,
+.bookmark-post:hover,
+.category-page:hover {
   color: #7a7a7a;
 }
 

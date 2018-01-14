@@ -50,41 +50,41 @@
     export default {
         props: {
             isLogin:{
-                type: boolean,
+                type: Number,
             },
             submitLink:{
-                type:string,
+                type:String,
+            },
+            isCreatePostModalActive:{
+                type:Boolean,
             }
         },
         data() {
             return {
-                isCreatePostModalActive: false,
-            }
-        },
-        methods(){
-            return {
-                isOpen: function(){
-                    if (this.isLogin){
-                        this.isCreatePostModalActive = true;
-                    }else{
-                        this.$snackbar.open({
-                            message: "You should login first",
-                            type: "is-warning",
-                            position: 'is-top',
-                            duration: 5000
-                        })
-                    }
-                },
-                isClose: function(){
-                    this.$dialog.confirm({
-                        message: 'Are you sure to exit, your work will not be saved',
-                        type: 'is-info',
-                        onConfirm: () => {
-                            this.isCreatePostModalActive = false;
-                        }
-                    })
 
+            };
+        },
+        methods: {
+            isOpen: function(){
+                if (this.isLogin){
+                    this.isCreatePostModalActive = true;
+                }else{
+                    this.$snackbar.open({
+                        message: "You should login first",
+                        type: "is-warning",
+                        position: 'is-top',
+                        duration: 5000
+                    })
                 }
+            },
+            isClose: function(){
+                this.$dialog.confirm({
+                    message: 'Are you sure to exit, your work will not be saved',
+                    type: 'is-info',
+                    onConfirm: () => {
+                        this.isCreatePostModalActive = false;
+                    }
+                })
             }
         },
     }
