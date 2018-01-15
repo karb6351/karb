@@ -44,7 +44,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="user in filterUsers" v-cloak>
+                                        <tr v-for="user in limitUsers" v-cloak>
                                             <td>@{{ user.id }}</td>
                                             <td>@{{ user.username }}</td>
                                             <td>@{{ user.email }}</td>
@@ -121,7 +121,10 @@
                     return this.users.filter( (user) => {
                         return (user.username.toLowerCase().match(this.search.toLowerCase()) ||
                         user.email.toLowerCase().match(this.search.toLowerCase()))
-                    }).slice(this.start,this.limit);
+                    });
+                },
+                limitUsers: function(){
+                    return this.filterUsers.slice(this.start,this.limit);
                 },
                 userLength : function(){
                     return this.filterUsers.length;

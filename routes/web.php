@@ -44,6 +44,8 @@ Route::prefix('admin')->group(function(){
     Route::put('permission/update','Admin\PermissionController@update')->name('permission.update');
     //category
     Route::get('category','CategoryController@index')->name('admin.category.index');
+    Route::post('category','CategoryController@store')->name('admin.category.store');
+    Route::put('category/update','CategoryController@update')->name('admin.category.update');
     //post manage
     Route::get('post','PostController@index')->name('admin.post.index');
     Route::delete('post/{id}','PostController@destroy')->name('admin.post.destroy');
