@@ -55,13 +55,10 @@
             submitLink:{
                 type:String,
             },
-            isCreatePostModalActive:{
-                type:Boolean,
-            }
         },
         data() {
             return {
-
+                isCreatePostModalActive: false,
             };
         },
         methods: {

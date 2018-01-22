@@ -48,7 +48,7 @@ class PostController extends Controller
 
     public function show($id){
         $post = Post::findOrFail($id);
-
-        return view('partial.user.show')->withPost($post);
+        $replyCount = $post->replies->count();
+        return view('partial.user.post_show')->withPost($post)->withReplyCount($replyCount);
     }
 }

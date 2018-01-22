@@ -21,7 +21,7 @@
             </div>
             <div class="media-right p-right-5">
                 <div class="topic-list-right-top">
-                    <span class="tag category-tag" :class="categoryColor(post.category_name)">{{ post.category_name }} </span>
+                    <category-tag :category-name="post.category_name"></category-tag>
                 </div>
                 <div class="topic-list-right-bottom select is-rounded is-small m-top-5">
                     <select name="">
@@ -40,12 +40,12 @@
 
 <script>
     import InfiniteLoading from 'vue-infinite-loading';
+    import categoryTag from './categoryTag';
     import axios from "axios";
 
     const url = "http://localhost:8000/api/category/";
 
     const moment = require('moment');
-    console.log(moment().format());
 
     export default {
         props:{
@@ -88,18 +88,6 @@
                         })
                 },500);
             },
-            categoryColor: function(categoryName){
-                switch (categoryName){
-                    case 'Laravel':
-                        return 'is-orange';
-                    case 'Vuejs':
-                        return 'is-primary';
-                    case 'React':
-                        return 'is-dark';
-                    case 'Angular4':
-                        return 'is-danger';
-                }
-            },
             diffForHuman: function(time){
                 var utc = moment.utc(time).format();
                 return moment(utc).fromNow();
@@ -118,6 +106,7 @@
         },
         components: {
             InfiniteLoading,
+            categoryTag,
         },
     };
 </script>

@@ -21,14 +21,14 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-     protected function redirectTo(){
-         return '/';
-     }
+     protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,7 +36,7 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {;
         $this->middleware('guest')->except('logout');
     }
 }

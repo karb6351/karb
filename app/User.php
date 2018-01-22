@@ -41,10 +41,16 @@ class User extends Authenticatable
         return $this->hasOne('App\UserActive');
     }
 
+    public function Rating(){
+        return $this->hasMany("App\Rating");
+    }
+
     public function posts(){
         return $this->hasMany('App\Post');
     }
-
+    public function replies(){
+        return $this->hasMany('App\Reply');
+    }
 
     public function isOnline(){
         return Cache::has('userOnline_'.$this->id);

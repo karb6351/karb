@@ -16,8 +16,8 @@ Route::get('/','PageController@index')->name('home');
 Route::get('category/{id}','CategoryController@show')->name('category.show');
 //post manage
 Route::resource('post','PostController', ['except' => ['index','destroy']]);
-
-
+//reply post
+Route::post('reply','ReplyController@store')->name('reply.store');
 
 //register, login/out, reset password
 Auth::routes();

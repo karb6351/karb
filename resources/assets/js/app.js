@@ -19,6 +19,8 @@ import Buefy from 'buefy';
 Vue.use(Buefy);
 
 Vue.component('postList', require('./components/frontend/postList.vue'));
+Vue.component('replyList', require('./components/frontend/replyList.vue'));
+Vue.component('categoryTag', require('./components/frontend/categoryTag.vue'));
 // Vue.component('createPost', require('./components/frontend/createPost.vue'));
 
 /**
