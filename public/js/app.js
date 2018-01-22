@@ -56938,6 +56938,9 @@ var moment = __webpack_require__(0);
         },
         profileUrl: function profileUrl(userID) {
             return "/user/" + userID;
+        },
+        rating: function rating(likeNumber, dislikeNumber) {
+            return likeNumber - dislikeNumber;
         }
     },
     computed: {
@@ -57309,17 +57312,30 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "span",
-                  { staticClass: "icon is-small like-icon-positive m-left-5" },
+                  {
+                    staticClass: "icon is-small m-left-5",
+                    class:
+                      _vm.rating(post.likeNumber, post.dislikeNumber) >= 0
+                        ? "like-icon-positive"
+                        : "like-icon-negative"
+                  },
                   [
                     _c("i", {
-                      staticClass: "fa ",
-                      class: _vm.positive ? "fa-thumbs-up" : "fa-thumbs-down",
+                      staticClass: "is-dark fa ",
+                      class:
+                        _vm.rating(post.likeNumber, post.dislikeNumber) >= 0
+                          ? "fa-thumbs-up"
+                          : "fa-thumbs-down",
                       attrs: { "aria-hidden": "true" }
                     })
                   ]
                 ),
                 _vm._v(" "),
-                _c("small", { staticClass: "like-number-icon" }, [_vm._v("3")])
+                _c("small", { staticClass: "like-number-icon " }, [
+                  _vm._v(
+                    _vm._s(_vm.rating(post.likeNumber, post.dislikeNumber))
+                  )
+                ])
               ]),
               _vm._v(" "),
               _c("a", { attrs: { href: _vm.postUrl(post.id) } }, [

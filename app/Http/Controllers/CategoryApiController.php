@@ -23,6 +23,8 @@ class CategoryApiController extends Controller
                 'userid' => $item->user->id,
                 'gender' => $item->user->gender,
                 'category_name' => $item->category->name,
+                'likeNumber' => $item->rating()->where('rating' , 1)->count(),
+                'dislikeNumber' => $item->rating()->where('rating' , 0)->count(),
             ];
             array_push($content,$temp);
         }

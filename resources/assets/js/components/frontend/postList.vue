@@ -11,10 +11,10 @@
                             <small class="post-owner" :class="post.gender === 'male' ? 'is-male' : 'is-female'">{{ post.username }}</small>
                         </a>
                         <small class="post-created-at">{{ diffForHuman(post.created_at.date) }}</small>
-                        <span class="icon is-small like-icon-positive m-left-5">
-                        <i class="fa " :class=" positive? 'fa-thumbs-up' : 'fa-thumbs-down'" aria-hidden="true"></i>
+                        <span class="icon is-small m-left-5" :class=" (rating(post.likeNumber,post.dislikeNumber) >= 0 )? 'like-icon-positive' : 'like-icon-negative' ">
+                        <i class="is-dark fa " :class=" (rating(post.likeNumber,post.dislikeNumber) >= 0 )? 'fa-thumbs-up' : 'fa-thumbs-down'" aria-hidden="true"></i>
                     </span>
-                        <small class="like-number-icon">3</small>
+                        <small class="like-number-icon ">{{ rating(post.likeNumber,post.dislikeNumber) }}</small>
                     </div>
                     <a :href="postUrl(post.id)"><strong><h4 class="title post-title">{{ post.topic }}</h4></strong></a>
                 </div>
@@ -97,6 +97,9 @@
             },
             profileUrl: function(userID){
                 return "/user/" + userID;
+            },
+            rating: function(likeNumber, dislikeNumber){
+                return likeNumber - dislikeNumber;
             }
         },
         computed: {
