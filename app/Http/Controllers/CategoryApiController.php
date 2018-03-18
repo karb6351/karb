@@ -25,6 +25,7 @@ class CategoryApiController extends Controller
                 'category_name' => $item->category->name,
                 'likeNumber' => $item->rating()->where('rating' , 1)->count(),
                 'dislikeNumber' => $item->rating()->where('rating' , 0)->count(),
+                'gravatarHash' => md5(strtolower(trim($item->user->email))),
             ];
             array_push($content,$temp);
         }

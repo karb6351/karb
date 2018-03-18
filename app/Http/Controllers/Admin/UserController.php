@@ -129,4 +129,6 @@ class UserController extends Controller
         Session::flash('success','User has ' . (($active->isBan)? 'blocked' : 'unblocked'));
         return redirect()->route('user.index');
     }
+
+
 }

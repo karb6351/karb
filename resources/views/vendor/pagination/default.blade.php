@@ -22,9 +22,9 @@
             @endforeach
         </ul>
         @if ($paginator->hasMorePages())
-            <a class="pagination-next" href="{{ $paginator->nextPageUrl() }}" rel="prev">Previous</a>
+            <a class="pagination-next" href="{{ $paginator->nextPageUrl() }}" rel="prev">Next</a>
         @else
-            <a class="pagination-next" href="{{ $paginator->nextPageUrl() }}" rel="prev" disabled>Previous</a>
+            <a class="pagination-next" href="{{ $paginator->nextPageUrl() }}" rel="prev" disabled>Next</a>
         @endif
     </nav>
 @endif

@@ -16,8 +16,19 @@ Route::get('/','PageController@index')->name('home');
 Route::get('category/{id}','CategoryController@show')->name('category.show');
 //post manage
 Route::resource('post','PostController', ['except' => ['index','destroy']]);
+Route::get('comment', 'PostController@getPostByReply')->name('post.getPostByReply');
 //reply post
 Route::post('reply','ReplyController@store')->name('reply.store');
+//bookmark post
+Route::get('bookmark/{order?}','BookmarkController@getBookmark')->name('bookmark.get');
+Route::delete('bookmark','BookmarkController@delete')->name('bookmark.delete');
+//User profile
+Route::get('user/{id}','UserProfileController@show')->name('profile.show');
+Route::put('user/{id}','UserProfileController@edit')->name('profile.edit');
+
+//search post
+Route::get('search','PostController@getSearchPage')->name('search.getPage');
+Route::post('search','PostController@search')->name('search.search');
 
 //register, login/out, reset password
 Auth::routes();

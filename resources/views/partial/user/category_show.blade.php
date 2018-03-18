@@ -67,11 +67,11 @@
                                 <span class="icon is-medium create-post-icon">
                                     <i class="fa fa-book" aria-hidden="true"></i>
                                 </span>Create Post</a></li>
-                            <li ><a class="menu-list-item">
-                                <span class="icon is-medium create-post-icon">
-                                    <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
-                                </span>Record</a></li>
-                            <li ><a class="menu-list-item">
+                            {{--<li ><a class="menu-list-item">--}}
+                                {{--<span class="icon is-medium create-post-icon">--}}
+                                    {{--<i class="fa fa-circle-o-notch" aria-hidden="true"></i>--}}
+                                {{--</span>Record</a></li>--}}
+                            <li ><a class="menu-list-item" href="{{ route('search.getPage') }}">
                                 <span class="icon is-medium create-post-icon">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>Search</a></li>
@@ -93,8 +93,8 @@
                                 <li><a href="{{ route('category.show',$c->id) }}" class="menu-list-item">
                                     <span></span>{{ $c->name }}</a></li>
                                 @endforeach
-                                <li><a href="#" class="menu-list-item">
-                                    <span></span>Define category</a></li>
+                                {{--<li><a href="#" class="menu-list-item">--}}
+                                    {{--<span></span>Define category</a></li>--}}
                             </ul>
                         </div>
                     </div>

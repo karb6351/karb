@@ -3,7 +3,7 @@
         <div :id="getFloor(index)" class="column column is-three-fifths is-offset-one-fifth  m-top-15" v-for="(reply,index) in replyList">
             <article class="media" >
                 <figure class="media-left m-top-10 has-text-centered">
-                    <p class="image is-64x64"><img class="user-icon" src="https://bulma.io/images/placeholders/128x128.png"></p>
+                    <p class="image is-64x64"><img class="user-icon" :src="gravatar(reply.gravatarHash)"></p>
 
                 </figure>
                 <div class="media-content">
@@ -102,6 +102,10 @@
             onReplyComment: function(){
 
             },
+            gravatar: function(gravatar){
+                console.log(gravatar);
+                return "https://www.gravatar.com/avatar/" + gravatar + "?s=50&d=mm";
+            }
         },
         computed: {
             nextPage: function(){

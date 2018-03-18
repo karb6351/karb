@@ -56941,6 +56941,10 @@ var moment = __webpack_require__(0);
         },
         rating: function rating(likeNumber, dislikeNumber) {
             return likeNumber - dislikeNumber;
+        },
+        gravatar: function gravatar(_gravatar) {
+            console.log(_gravatar);
+            return "https://www.gravatar.com/avatar/" + _gravatar + "?s=50&d=mm";
         }
     },
     computed: {
@@ -57290,7 +57294,12 @@ var render = function() {
     [
       _vm._l(_vm.postList, function(post) {
         return _c("article", { staticClass: "media single-post-list" }, [
-          _vm._m(0, true),
+          _c("figure", { staticClass: "media-left" }, [
+            _c("img", {
+              staticClass: "user-icon",
+              attrs: { src: _vm.gravatar(post.gravatarHash) }
+            })
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "media-content" }, [
             _c("div", { staticClass: "content" }, [
@@ -57360,7 +57369,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(1, true)
+            _vm._m(0, true)
           ])
         ])
       }),
@@ -57375,17 +57384,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("figure", { staticClass: "media-left" }, [
-      _c("img", {
-        staticClass: "user-icon",
-        attrs: { src: "https://bulma.io/images/placeholders/128x128.png" }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -57575,7 +57573,11 @@ console.log(moment().format());
         getFloor: function getFloor(index) {
             return 'floor-' + (index + 2);
         },
-        onReplyComment: function onReplyComment() {}
+        onReplyComment: function onReplyComment() {},
+        gravatar: function gravatar(_gravatar) {
+            console.log(_gravatar);
+            return "https://www.gravatar.com/avatar/" + _gravatar + "?s=50&d=mm";
+        }
     },
     computed: {
         nextPage: function nextPage() {
@@ -57618,7 +57620,18 @@ var render = function() {
           },
           [
             _c("article", { staticClass: "media" }, [
-              _vm._m(0, true),
+              _c(
+                "figure",
+                { staticClass: "media-left m-top-10 has-text-centered" },
+                [
+                  _c("p", { staticClass: "image is-64x64" }, [
+                    _c("img", {
+                      staticClass: "user-icon",
+                      attrs: { src: _vm.gravatar(reply.gravatarHash) }
+                    })
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "media-content" }, [
                 _c("div", { staticClass: "content" }, [
@@ -57645,7 +57658,7 @@ var render = function() {
                           ]
                         ),
                         _vm._v(" "),
-                        _vm._m(1, true),
+                        _vm._m(0, true),
                         _vm._v(" "),
                         _c(
                           "b-tooltip",
@@ -57701,23 +57714,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "figure",
-      { staticClass: "media-left m-top-10 has-text-centered" },
-      [
-        _c("p", { staticClass: "image is-64x64" }, [
-          _c("img", {
-            staticClass: "user-icon",
-            attrs: { src: "https://bulma.io/images/placeholders/128x128.png" }
-          })
-        ])
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

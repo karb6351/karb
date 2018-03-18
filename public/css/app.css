@@ -18336,3 +18336,38 @@ body {
   color: #7a7a7a;
 }
 
+.profile-image {
+  margin: 0 auto;
+}
+
+.profile-user-icon {
+  border-radius: 50%;
+}
+
+.profile-username {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profile-email {
+  font-size: 13px;
+}
+
+.profile-gender {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.notDisplay {
+  display: none;
+}
+
+.is-male {
+  color: #2177ea;
+}
+
+.is-female {
+  color: #ef1e1ee0;
+}
+

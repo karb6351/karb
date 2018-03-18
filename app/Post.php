@@ -23,4 +23,8 @@ class Post extends Model
     public function Rating(){
         return $this->hasMany("App\Rating");
     }
+
+    public function bookmark(){
+        return $this->hasMany('App\Bookmark');
+    }
 }

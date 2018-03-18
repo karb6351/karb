@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Reply;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
@@ -50,5 +51,31 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $replyCount = $post->replies->count();
         return view('partial.user.post_show')->withPost($post)->withReplyCount($replyCount);
+    }
+
+    public function getPostByReply(){
+        $user_id = Auth::user()->id;
+        $posts = Post::leftjoin('replies', 'posts.id','=','replies.post_id')->
+                    orderBy('replies.created_at')->
+                    select('posts.*')->
+                    where('replies.user_id',Auth::user()->id)->
+                    paginate(10);
+        return view('partial.user.comment_show')->withPosts($posts);
+    }
+
+    public function getSearchPage(){
+        return view('partial.user.search');
+    }
+
+    public function search(Request $request){
+        $this->validate($request,[
+            'value' => 'string|required'
+        ]);
+
+        $input = $request->input('value');
+        $posts = Post::leftjoin('users','users.id', '=','posts.user_id')->where('posts.topic','like','%'.$input.'%')->orWhere('users.username','like','%'.$input.'%')->paginate(10);
+
+        return view('partial.user.search')->withPosts($posts);
+
     }
 }

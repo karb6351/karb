@@ -14,6 +14,8 @@ class ReplyController extends Controller
         $this->middleware('auth');
     }
 
+
+
     public function store(Request $request){
         $this->validate($request,[
             'postID' => 'required',

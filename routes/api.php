@@ -30,3 +30,5 @@ Route::get('/category/{id}','CategoryApiController@show');
 Route::get('/post/{id}','PostApiController@replyList');
 
 Route::get('/rating','RatingController@add');
+
+Route::post('/bookmark','BookmarkController@setBookmark');

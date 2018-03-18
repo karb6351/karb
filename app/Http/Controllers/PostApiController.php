@@ -21,6 +21,7 @@ class PostApiController extends Controller
                 'gender' => $item->user->gender,
                 'content' => $item->content,
                 'created_at' => $item->created_at,
+                'gravatarHash' => md5(strtolower(trim($item->user->email))),
             ];
             array_push($contentList,$temp);
         }

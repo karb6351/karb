@@ -2,7 +2,7 @@
     <div>
         <article class="media single-post-list" v-for="post in postList">
             <figure class="media-left">
-                <img class="user-icon" src="https://bulma.io/images/placeholders/128x128.png">
+                <img class="user-icon" :src="gravatar(post.gravatarHash)">
             </figure>
             <div class="media-content">
                 <div class="content">
@@ -100,6 +100,10 @@
             },
             rating: function(likeNumber, dislikeNumber){
                 return likeNumber - dislikeNumber;
+            },
+            gravatar: function(gravatar){
+                console.log(gravatar);
+                return "https://www.gravatar.com/avatar/" + gravatar + "?s=50&d=mm";
             }
         },
         computed: {

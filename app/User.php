@@ -56,5 +56,9 @@ class User extends Authenticatable
         return Cache::has('userOnline_'.$this->id);
     }
 
+    public function bookmarks(){
+        return $this->hasMany('App\Bookmark');
+    }
+
 
 }

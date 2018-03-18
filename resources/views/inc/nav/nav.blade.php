@@ -48,34 +48,34 @@
                         </b-dropdown-item>
                         @endhasanyrole
                         <b-dropdown-item has-link>
-                            <a href="#">
+                            <a href="{{ route('profile.show',Auth::user()->id) }}">
                                 <span class="icon small-icon">
                                     <i class="fa fa-user-circle" aria-hidden="true"></i>
                                 </span>
-                                Profle</a>
+                                Profile</a>
                         </b-dropdown-item>
                         <b-dropdown-item has-link>
-                            <a href="#">
+                            <a href="{{ route('bookmark.get') }}">
                                 <span class="icon small-icon">
                                     <i class="fa fa-bookmark" aria-hidden="true"></i>
                                 </span>
                                 Bookmark</a>
                         </b-dropdown-item>
                         <b-dropdown-item has-link>
-                            <a href="#">
+                            <a href="{{ route('post.getPostByReply') }}">
                                 <span class="icon small-icon">
                                     <i class="fa fa-inbox" aria-hidden="true"></i>
                                 </span>
                                 Comment Post</a>
                         </b-dropdown-item>
-                        <b-dropdown-item has-link>
-                            <a href="#">
-                                <span class="icon small-icon">
-                                    <i class="fa fa-bell" aria-hidden="true"></i>
-                                </span>
-                                Notification
-                                <span class="tag is-rounded is-info"><strong>1</strong></span></a>
-                        </b-dropdown-item>
+                        {{--<b-dropdown-item has-link>--}}
+                            {{--<a href="#">--}}
+                                {{--<span class="icon small-icon">--}}
+                                    {{--<i class="fa fa-bell" aria-hidden="true"></i>--}}
+                                {{--</span>--}}
+                                {{--Notification--}}
+                                {{--<span class="tag is-rounded is-info"><strong>1</strong></span></a>--}}
+                        {{--</b-dropdown-item>--}}
                         <hr class="dropdown-divider">
                         <b-dropdown-item has-link>
                                 <a onclick="event.preventDefault();

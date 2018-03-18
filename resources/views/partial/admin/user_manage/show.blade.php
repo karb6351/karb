@@ -27,7 +27,7 @@
                         <span>Email: </span> <strong>{{ $user->email }} </strong>
                     </div>
                     <div class="column is-centered">
-                        <span>Role: </span> <strong>{{ $user->roles()->first()['name'] }} </strong>
+                        <span>Role: </span> <strong>{{ $user->getRoleNames()[sizeof($user->getRoleNames()) - 1] }} </strong>
                     </div>
                     <div class="column is-centered">
                         <span>Gender: </span> <strong>{{ $user->gender }}</strong>
@@ -66,35 +66,35 @@
                     </div>
                 </div>
                 <div class="column is-6">
-                    <div class="card m-top-20">
-                        <header class="card-header ">
-                            <p class="card-header-title recent-act-header">Recent activities</p>
-                        </header>
-                        <div class="m">
-                            <table class="table is-fullwidth is-hoverable">
-                                <thead>
-                                    <tr>
-                                        <th>Topic</th>
-                                        <th>Post Owner</th>
-                                        <th>Date</th>
-                                        <th>View</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @for($i = 0;$i<5 ;$i++)
-                                    <tr>
-                                        <td>Hello</td>
-                                        <td>David</td>
-                                        <td>Jan 3, 2018</td>
-                                        <td><a href="#" class="button is-success">
-                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                            </a></td>
-                                    </tr>
-                                @endfor
-                                </tbody>
-                            </table>
-                            1|2|3|4
-                        </div>
+                        <div class="card m-top-20">
+                            <header class="card-header ">
+                                <p class="card-header-title recent-act-header">Recent activities</p>
+                            </header>
+                            <div class="m">
+                                <table class="table is-fullwidth is-hoverable">
+                                    <thead>
+                                        <tr>
+                                            <th>Topic</th>
+                                            <th>Post Owner</th>
+                                            <th>Date</th>
+                                            <th>View</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @for($i = 0;$i<5 ;$i++)
+                                        <tr>
+                                            <td>Hello</td>
+                                            <td>David</td>
+                                            <td>Jan 3, 2018</td>
+                                            <td><a href="#" class="button is-success">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                </a></td>
+                                        </tr>
+                                    @endfor
+                                    </tbody>
+                                </table>
+                                1|2|3|4
+                            </div>
                     </div>
                 </div>
             </div>
